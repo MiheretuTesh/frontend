@@ -112,37 +112,40 @@ export default function Home() {
         />
 
         {isPopoverOpen && (
-          <div className="absolute mt-2 w-[100px] bg-white border border-gray-300 rounded-md shadow-lg overflow-scroll h-[100px]">
+          <div className="absolute mt-2 w-[150px] bg-white border border-gray-300 rounded-md shadow-lg overflow-y-scroll h-[300px]">
             <ul>
               {dataFilter.map((data: any, index) => (
                 <li
                   key={index}
-                  className="py-2 px-4 cursor-pointer hover:bg-gray-100 bg-slate-300 w-[100px] rounded-lg shadow-md"
+                  className="py-2 px-4 m-[2px] cursor-pointer hover:bg-slate-300 bg-slate-100 rounded-lg shadow-md"
                   onClick={() => handleItemClick(data)}
                 >
                   {data.name}
                 </li>
               ))}
+
               <li
-                className="py-2 px-4 cursor-pointer hover:bg-gray-100"
+                className="py-2 px-4 m-[2px] cursor-pointer hover:bg-slate-300 bg-slate-100 rounded-lg shadow-md"
                 onClick={() => handleItemClick("+")}
               >
                 +
               </li>
+
               <li
-                className="py-2 px-4 cursor-pointer hover:bg-gray-100"
+                className="py-2 px-4 m-[2px] cursor-pointer hover:bg-slate-300 bg-slate-100 rounded-lg shadow-md"
                 onClick={() => handleItemClick("-")}
               >
                 -
               </li>
+
               <li
-                className="py-2 px-4 cursor-pointer hover:bg-gray-100"
+                className="py-2 px-4 m-[2px] cursor-pointer hover:bg-slate-300 bg-slate-100 rounded-lg shadow-md"
                 onClick={() => handleItemClick("*")}
               >
                 *
               </li>
               <li
-                className="py-2 px-4 cursor-pointer hover:bg-gray-100"
+                className="py-2 px-4 m-[2px] cursor-pointer hover:bg-slate-300 bg-slate-100 rounded-lg shadow-md"
                 onClick={() => handleItemClick("/")}
               >
                 /
