@@ -14,7 +14,7 @@ export default function Home() {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const { data, isLoading, isError } = useQuery({
     queryFn: async () => await getData(),
-    queryKey: ["datas"],
+    queryKey: ["data"],
   });
 
   useEffect(() => {
@@ -81,8 +81,22 @@ export default function Home() {
     }
   }, [selectedItems]);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Sorry, there was an error.</div>;
+  if (isLoading)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-1/2 mx-auto p-6 bg-white shadow-md rounded-md flex justify-center">
+          Loading...
+        </div>
+      </div>
+    );
+  if (isError)
+    return (
+      <div className="flex justify-center items-center h-screen bg-black">
+        <div className="w-1/2 mx-auto p-6 bg-black shadow-md rounded-md">
+          Sorry, there was an Error!
+        </div>
+      </div>
+    );
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
